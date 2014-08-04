@@ -11,6 +11,8 @@ RRCamera Controler is to manage the camera device. you can crop the picture. it 
 Overview Delegates
 ==================
 
+RRCamera provides you powerfull delegates to manage functionnality from the main Controller.
+
 ``` Objective-C
 
 @protocol RRCameraDelegate
@@ -25,6 +27,9 @@ Overview Delegates
 @end
 
 ```
+
+Overview configuration
+======================
 
 You are free to change some parameters:
 
