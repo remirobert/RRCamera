@@ -31,7 +31,7 @@ RRCamera provides you powerfull delegates to manage functionnality from the main
 Overview configuration
 ======================
 
-You are free to change some parameters:
+**You are free to change some parameters:**
 
 ``` Objective-C
 @property (nonatomic, assign) BOOL allowSwitchDevice;
@@ -41,15 +41,15 @@ Enables or desables change between front and back camera.
 ``` Objective-C
 @property (nonatomic, assign) AVCaptureDevicePosition defaultDevice;
 ```
-set the camera position by default (by AVCaptureDevicePositionBack or AVCaptureDevicePositionFront), it will display when launching the controller.
+set the camera position by default (by **AVCaptureDevicePositionBack** or **AVCaptureDevicePositionFront**), it will display when launching the controller.
 
 ``` Objective-C
 @property (nonatomic, strong) UIView *customView;
 ```
-You can put your own interfarce, depending on your design. You must set the customView for displaying you custom interface. For controls Bouttons (take picture, cancel controller, or switch camera), you must specify a tag for each button:
- - 1: Take picture
- - 2: Cancel controller
- - 3: Switch Camera
+You can put your own interfarce, depending on your design. You must set the customView for displaying you custom interface. For controls Bouttons (take picture, cancel controller, or switch camera), you must specify a **tag** for each button:
+ - 1: **Take picture**
+ - 2: **Cancel controller**
+ - 3: **Switch Camera**
 
 If you don't specify the tag, the functionnality will not be implemented.
 If you don't provide custom interface, a default interface will be displayed.
