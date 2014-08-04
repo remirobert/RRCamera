@@ -79,6 +79,8 @@ Usage
 }
     
 ```
+**For more details and examples, refer to the example project.**
+
 ## Installation
 
 RRCamera is available through [CocoaPods](http://cocoapods.org). To install
