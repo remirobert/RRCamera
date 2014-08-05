@@ -86,13 +86,18 @@
              if (_currentDevicePosition == AVCaptureDevicePositionFront) {
                  result = [UIImage imageWithCGImage:result.CGImage scale:1.0 orientation:UIImageOrientationLeft + 4];
              }
-             [self.delegate takePictureDone:result];
+             
+             if ([self.delegate respondsToSelector:@selector(takePictureDone:)]) {
+                 [self.delegate takePictureDone:result];
+             }
          }
      }];
 }
 
 - (void) cancelCamera {
-    [self.delegate cameraCanceled];
+    if ([self.delegate respondsToSelector:@selector(cancelCamera)]) {
+        [self.delegate cameraCanceled];
+    }
 }
 
 - (void) changeDevice {
@@ -110,7 +115,10 @@
             [self.session removeInput:currentInput];
             [self.session addInput:newInput];
             [self.session commitConfiguration];
-            [self.delegate switchCamera:_currentDevicePosition];
+            
+            if ([self.delegate respondsToSelector:@selector(switchCamera:)]) {
+                [self.delegate switchCamera:_currentDevicePosition];
+            }
             break ;
         }
     }
@@ -220,7 +228,7 @@
 	[self.view.layer addSublayer:captureVideoPreviewLayer];
 	
     AVCaptureDevice *device = (_currentDevicePosition == AVCaptureDevicePositionBack) ?
-    [self frontCamera] : [self frontCamera];
+    [self backCamera] : [self frontCamera];
 
 	AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
 	if (!input) {

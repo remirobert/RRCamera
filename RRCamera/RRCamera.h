@@ -16,10 +16,9 @@
 
 @interface RRCamera : UIViewController
 
-@property (nonatomic, assign) id<RRCameraDelegate> delegate;
-
 - (instancetype) init;
 
+@property (nonatomic, assign) id<RRCameraDelegate> delegate;
 @property (nonatomic, assign) BOOL allowSwitchDevice;
 @property (nonatomic, assign) AVCaptureDevicePosition defaultDevice;
 @property (nonatomic, strong) UIView *customView;
@@ -29,7 +28,7 @@
 
 #pragma mark - Camera Delegate
 
-@protocol RRCameraDelegate
+@protocol RRCameraDelegate <NSObject>
 
 @optional
 - (void) cameraCanceled;
