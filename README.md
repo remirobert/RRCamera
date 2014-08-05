@@ -41,15 +41,19 @@ Enables or desables change between front and back camera.
 ``` Objective-C
 @property (nonatomic, assign) AVCaptureDevicePosition defaultDevice;
 ```
-set the camera position by default (by **AVCaptureDevicePositionBack** or **AVCaptureDevicePositionFront**), it will display when launching the controller.
+Set the camera position by default (by **AVCaptureDevicePositionBack** or **AVCaptureDevicePositionFront**), it will display when launching the controller.
 
 ``` Objective-C
 @property (nonatomic, strong) UIView *customView;
 ```
 You can put your own interfarce, depending on your design. You must set the customView for displaying you custom interface. For controls Bouttons (take picture, cancel controller, or switch camera), you must specify a **tag** for each button:
- - 1: **Take picture**
- - 2: **Cancel controller**
- - 3: **Switch Camera**
+
+| tag | button function  |
+|-----|-------------------
+|  1  | Take picture     |
+|  2  | Cancel controller|
+|  3  | switch camera    |
+
 
 If you don't specify the tag, the functionnality will not be implemented.
 If you don't provide custom interface, a default interface will be displayed.
@@ -79,6 +83,8 @@ Usage
 }
     
 ```
+**For more details and examples, refer to the example project.**
+
 ## Installation
 
 RRCamera is available through [CocoaPods](http://cocoapods.org). To install
