@@ -95,7 +95,7 @@
 }
 
 - (void) cancelCamera {
-    if ([self.delegate respondsToSelector:@selector(cancelCamera)]) {
+    if ([self.delegate respondsToSelector:@selector(cameraCanceled)]) {
         [self.delegate cameraCanceled];
     }
 }
